@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/02-Mq sidebar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+    integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+    crossorigin="anonymous" />
+    <title>Document</title>
+</head>
+<body>
+    <header  class="header">
+        <div class="header__logo">
+            <h1>Codi<span>Go</span></h1>
+            <button class="header__menu open">
+                &#9776
+            </button>
+        </div>
+        <button class="header__logoout">
+            Logout
+
+        </button>
+
+    </header>
+    <main class="main">
+        <aside class="aside__bar ">
+            <div class="sidebar__profile">
+                <figure class="sidebar__picture">
+                    <img src="./Img/programmer.png" alt="">
+                </figure>
+                <p class="sidebar__name">Jorge Chapman</p>
+                <button class="sidebar__menu open-mobile">
+                    &#9776
+                </button>
+            </div>
+            <nav class="sidebar__nav">
+                <ul class="sidebar__list">
+                    <li class="sidebar__ite">
+                        <a class="sidebar__link" href="">
+                           <i class="fas fa-desktop "></i>  <p class="sidebar__text"> Dashboard </p> 
+                        </a>
+                    </li>
+                    <li class="sidebar__ite">
+                        <a class="sidebar__link" href="">
+                           <i class="fas fa-cogs    "></i>  <p class="sidebar__text"> Components </p>
+                        </a>
+                    </li>
+                    <li class="sidebar__ite">
+                        <a class="sidebar__link" href="">
+                           <i class="fas fa-table    "></i>   <p class="sidebar__text"> Tables </p>
+                        </a>
+                    </li>
+                    <li class="sidebar__ite">
+                        <a class="sidebar__link" href="">
+                           <i class="fas fa-th    "></i>  <p class="sidebar__text"> Forms </p>
+                        </a>
+                    </li>
+                    <li class="sidebar__ite">
+                        <a class="sidebar__link" href="">
+                           <i class="fas fa-info-circle    "></i> <p class="sidebar__text"> About </p>
+                        </a>
+                    </li>
+                    <li class="sidebar__ite">
+                        <a class="sidebar__link" href="">
+                           <i class="fas fa-sliders-h    "></i>   <p class="sidebar__text"> Settings </p>
+                        </a>
+                    </li>
+                </ul>
+
+            </nav>
+        </aside>
+        <section class="main__container">
+            <div class="container__column">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita error iusto incidunt.</p>
+            </div>
+            <div class="container__column">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita error iusto incidunt.</p>
+            </div>
+            <div class="container__column">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita error iusto incidunt.</p>
+            </div>
+            <div class="container__column">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita error iusto incidunt.</p>
+            </div>
+            <div class="container__column">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita error iusto incidunt.</p>
+            </div>
+            
+        </section>
+   
+        
+    </main>
+    <script>
+        const btnHeaderMenu = document.querySelector("button.header__menu");
+        const asideSideBar = document.querySelector("aside.aside__bar");
+        btnHeaderMenu.onclick = e => {
+          asideSideBar.classList.toggle("open");
+        }
+      </script>
+      <script>
+        const btnSideBarMenu = document.querySelector("button.sidebar__menu");
+    btnSideBarMenu.onclick = e => {
+      asideSideBar.classList.toggle("open-mobile");
+    }
+      </script>
+      <script>
+          const mql = window.matchMedia('(max-width:500px)');
+    function screenTest(e) {
+      e.matches && asideSideBar.classList.remove("open");
+    }
+    mql.addListener(screenTest);
+      </script>
+</body>
+</html>
